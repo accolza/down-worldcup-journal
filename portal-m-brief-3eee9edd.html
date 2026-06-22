@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>开元棋牌 · 可信站点介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+    }
+
+    /* 深色头图 — 叙事开场 */
+    .hero {
+      background: linear-gradient(145deg, #0f172a 0%, #1e293b 100%);
+      color: #e9eef3;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #facc15, #fde047);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .hero .lead {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      line-height: 1.8;
+      padding: 0 0.5rem;
+    }
+
+    .hero .lead strong {
+      color: #facc15;
+      font-weight: 500;
+    }
+
+    /* 正文浅色区 */
+    .content {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 1.2rem;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
+    }
+
+    .intro-text {
+      font-size: 1.05rem;
+      margin-bottom: 2.2rem;
+      color: #334155;
+    }
+
+    .intro-text a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .intro-text a:hover {
+      border-bottom-color: #2563eb;
+      color: #1e40af;
+    }
+
+    /* 特点卡片区 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin: 2.5rem 0 2rem;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.5rem 1.4rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s, transform 0.15s;
+      border: 1px solid #e9edf2;
+    }
+
+    .feature-card:hover {
+      box-shadow: 0 8px 24px rgba(59,130,246,0.08);
+      transform: translateY(-2px);
+      border-color: #b9d4fd;
+    }
+
+    .feature-card .emoji {
+      font-size: 1.5rem;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* 可信说明 + 场景段落 */
+    .trust-block {
+      background: #f1f5f9;
+      border-radius: 18px;
+      padding: 2rem 2rem 1.8rem;
+      margin: 2rem 0 2.5rem;
+      border-left: 5px solid #3b82f6;
+    }
+
+    .trust-block p {
+      margin-bottom: 1rem;
+      color: #1e293b;
+    }
+
+    .trust-block strong {
+      color: #0f172a;
+    }
+
+    .trust-block .highlight-link {
+      color: #2563eb;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px dashed #94a3b8;
+      transition: border-color 0.2s;
+    }
+
+    .trust-block .highlight-link:hover {
+      border-bottom-color: #2563eb;
+    }
+
+    /* FAQ 摘要 — 极简 */
+    .faq-mini {
+      margin-top: 2.8rem;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item .q {
+      font-weight: 600;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: 1rem;
+    }
+
+    .faq-item .a {
+      color: #475569;
+      font-size: 0.95rem;
+      padding-left: 1.2rem;
+      border-left: 2px solid #cbd5e1;
+      margin-top: 0.2rem;
+      line-height: 1.6;
+    }
+
+    /* 温和结尾 */
+    .gentle-footer {
+      margin-top: 3.2rem;
+      padding: 1.8rem 0 0.5rem;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .gentle-footer small {
+      display: block;
+      margin-top: 0.4rem;
+      color: #94a3b8;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      .hero {
+        padding: 3.2rem 1.2rem 3rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .content {
+        padding: 2rem 1.2rem 3rem;
+      }
+      .section-title {
+        font-size: 1.25rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .trust-block {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 · 开场短句 -->
+  <header class="hero">
+    <h1>开元棋牌</h1>
+    <p class="lead">
+      一个从定位之初便专注于<strong>可靠连接</strong>与<strong>持续服务</strong>的平台。<br>
+      不止于名称，更在于背后清晰的信息架构与稳定的访问路径。
+    </p>
+  </header>
+
+  <!-- 正文浅色区 · 叙事承接 -->
+  <main class="content">
+
+    <!-- 站点介绍段落 -->
+    <div class="intro-text">
+      <p>
+        <a href="https://portal-m-kaiyuan.com">开元棋牌</a> 并非一个简单的门户聚合，而是一套围绕棋牌内容组织的中心化索引。站点整体采用轻量化设计，聚焦于信息传达的效率，减少冗余装饰，让访问者可以直接触及核心模块。无论是初次接触还是长期使用者，都能在清晰的导航层级中找到对应资源。
+      </p>
+      <p style="margin-top: 1rem;">
+        从域名结构到页面编排，每一个环节都经过基础层面的考量。我们不夸大其独特性，但可以诚实地说：<strong>透明度</strong>与<strong>可访问性</strong>是贯穿始终的基线。
+      </p>
+    </div>
+
+    <!-- 特点列表 · 卡片呈现 -->
+    <h2 class="section-title">几个值得注意的侧面</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <span class="emoji">📐</span>
+        <h3>结构清晰</h3>
+        <p>信息层级经过梳理，主要功能入口一目了然，减少不必要的跳转与困惑。</p>
+      </div>
+      <div class="feature-card">
+        <span class="emoji">⚡</span>
+        <h3>响应效率</h3>
+        <p>页面资源经过基础优化，在常见网络环境下可快速完成加载与渲染。</p>
+      </div>
+      <div class="feature-card">
+        <span class="emoji">🔒</span>
+        <h3>连接稳定</h3>
+        <p>采用标准传输协议与服务器配置，保持访问链路的持续可用。</p>
+      </div>
+      <div class="feature-card">
+        <span class="emoji">🧭</span>
+        <h3>指向明确</h3>
+        <p>每个链接与模块都对应实际内容，无模糊或误导性的导航标识。</p>
+      </div>
+    </div>
+
+    <!-- 承接段落 · 可信说明 + 场景 -->
+    <div class="trust-block">
+      <p>
+        <strong>关于可信度的一点说明：</strong> 我们不会给出无法兑现的承诺，也不使用悬浮的营销话术。<a href="https://portal-m-kaiyuan.com" class="highlight-link">开元棋牌</a> 所呈现的每一项功能与链接，均基于实际可访问的资源。平台本身不收集非必要数据，也不嵌入无关的第三方追踪脚本——这一点在同类站点中并不多见。
+      </p>
+      <p>
+        常见的使用场景包括：通过首页快速定位棋牌资讯、查阅分类索引、或作为日常访问的中转起点。站点保持较低的学习门槛，即使不熟悉技术细节的用户也能顺畅使用。
+      </p>
+    </div>
+
+    <!-- FAQ 摘要 ( 三问 ) -->
+    <div class="faq-mini">
+      <h2 class="section-title" style="margin-bottom: 1.5rem;">快速了解 · 常见疑问</h2>
+
+      <div class="faq-item">
+        <span class="q">❓ 这个站点主要提供什么？</span>
+        <div class="a">一个围绕棋牌内容的集中导航与信息页，不包含游戏客户端本身，而是指向明确的资源入口与介绍。</div>
+      </div>
+      <div class="faq-item">
+        <span class="q">❓ 是否需要注册或登录？</span>
+        <div class="a">首页以及绝大多数信息页面完全公开，无需任何身份认证即可浏览全部内容。</div>
+      </div>
+      <div class="faq-item">
+        <span class="q">❓ 如何验证站点的可靠性？</span>
+        <div class="a">你可以直接通过 <a href="https://portal-m-kaiyuan.com" style="color:#2563eb; text-decoration: underline;">开元棋牌</a> 访问，并观察页面加载、链接响应以及内容一致性。长期可用本身就是一种验证。</div>
+      </div>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="gentle-footer">
+      <p>信息即路径，清晰即信任。</p>
+      <small>本页仅作介绍用途，不构成任何形式的诱导或承诺。</small>
+    </div>
+
+  </main>
+
+</body>
+</html>
